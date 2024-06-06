@@ -31,6 +31,9 @@ func init() {
 	if err := loadMySQL(); err == nil {
 		return
 	}
+	if err := loadSqlite(); err == nil {
+		return
+	}
 }
 
 func loadSource() {
@@ -92,6 +95,22 @@ func loadPostgres() error {
 		pg.Host,
 		pg.Port,
 		pg.Database,
+	)
+	return nil
+}
+
+func loadSqlite() error {
+	var sqlite struct {
+		Database string `envconfig:"DB" required:"true"`
+	}
+
+	if err := envconfig.Process("SQLITE", &sqlite); err != nil {
+		return err
+	}
+
+	URL = fmt.Sprintf(
+		"sqlite://%s",
+		sqlite.Database,
 	)
 	return nil
 }

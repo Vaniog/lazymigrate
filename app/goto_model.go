@@ -88,7 +88,7 @@ func (gm gotoModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (gm gotoModel) View() string {
 	return lipgloss.JoinVertical(
 		0,
-		"Migration name or version\n",
+		"Goto (migration name or version)\n",
 		gm.migration.View(),
 		"\n",
 		gm.help.View(gm.keymap),
