@@ -1,0 +1,6 @@
+.lazymigrate
+migrations
+docker-compose.yml
+.idea
+.env
+app.db
