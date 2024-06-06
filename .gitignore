@@ -4,3 +4,6 @@ docker-compose.yml
 .idea
 .env
 app.db
+*.gif
+tapes
+lazymigrate
