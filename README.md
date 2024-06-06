@@ -23,6 +23,14 @@ LAZYMIGRATE_URL=postgres://root:root@localhost:5432/root?sslmode=disable
 LAZYMIGRATE_SOURCE=migrations
 ```
 
+### Install
+[Releases](https://github.com/Vaniog/lazymigrate/releases/)
+
+Or 
+```
+go install github.com/Vaniog/lazymigrate
+```
+
 ### Examples
 
 Naming based on docker images envs naming
